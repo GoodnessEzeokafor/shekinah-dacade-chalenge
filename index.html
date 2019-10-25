@@ -76,7 +76,7 @@
         </div>
       </div>
       <script id="template" type="x-tmpl-mustache">
-          {{#articleListBody}}
+           {{#articleListArr}}
           <div class="card mb-3" id={{id}}">
               <img class="card-img-top" src="{{imageUrl}}" alt="Card image cap" width="50" height="300">
               <div class="card-body">
@@ -90,7 +90,8 @@
                 <p class="card-text"><small class="text-muted">Created on {{created}} </small></p>
               </div>
             </div>
-          {{/articleListBody }}
+          {{/articleListArr }}
+
 
       </script>
     <script src="js/jquery.min.js"></script>
