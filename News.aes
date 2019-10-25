@@ -1,0 +1,48 @@
+contract News =
+  record article ={
+    id:int,
+    title:string,
+    content:string,
+    imageUrl:string,
+    author:address,
+    created:int
+    }
+  record state =
+    {
+    index_counter :int,
+    articles : map(int,article)
+    }
+  entrypoint init() = 
+    { articles = {}, 
+      index_counter = 0}
+  
+   
+  entrypoint getArticleLength():int =
+    state.index_counter
+  
+  stateful entrypoint add_new_article(_title:string,_content:string,_imageUrl:string) =
+    let timestamp= Chain.timestamp
+    let article = {id=getArticleLength() + 1,title=_title, content=_content,imageUrl=_imageUrl,author=Call.caller,created=timestamp}
+    let index = getArticleLength() + 1
+    put(state{articles[index] = article, index_counter  = index})
+  
+  entrypoint get_article_by_index(index:int) : article = 
+    switch(Map.lookup(index, state.articles))
+      None => abort("Article does not exist with this index")
+      Some(x) => x
+      
+  stateful entrypoint update_existing_article(_id:int, _title:string, _content:string, _imageUrl:string) =
+    let article = get_article_by_index(_id)
+    let updated_article = {id=_id,title=_title, content=_content,imageUrl=_imageUrl,author=article.author,created=Chain.timestamp}
+    put(state{articles[_id] =  updated_article})
+    
+  
+
+    
+    
+    
+    
+    
+    
+
+//  ct_Ace1GDKjj7GN7hjMaSCfqTqkXZyBVumZLoByaXaAebtGUW6HS
