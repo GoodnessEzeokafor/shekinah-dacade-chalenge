@@ -137,21 +137,21 @@ window.addEventListener('load', async() => {
   
 
 // Buy A Product
-$("#articleListBody").on("click",".updateBtn", async function(event){
-    $("#loader").show();
+// $("#articleListBody").on("click",".updateBtn", async function(event){
+//     $("#loader").show();
   
-    const dataIndex = event.target.id
-    const purchased_article = await contractCall('update_existing_article', [dataIndex],0);
-    console.log("Purchase:", purchased_product)
+//     const dataIndex = event.target.id
+//     const purchased_article = await contractCall('update_existing_article', [dataIndex],0);
+//     console.log("Purchase:", purchased_product)
     
-    // const foundIndex = productListArr.findIndex(product => product.id === dataIndex)
-    // const value = $(".buyBtn")[foundIndex] ;
+//     // const foundIndex = productListArr.findIndex(product => product.id === dataIndex)
+//     // const value = $(".buyBtn")[foundIndex] ;
   
-    console.log("-----------------")
-    console.log("Data Index:", dataIndex)
-    console.log("--------------------------")
+//     console.log("-----------------")
+//     console.log("Data Index:", dataIndex)
+//     console.log("--------------------------")
     
-    console.log("Just Clicked The Buy Button")
-    event.preventDefault();
-  });
+//     console.log("Just Clicked The Buy Button")
+//     event.preventDefault();
+//   });
   
