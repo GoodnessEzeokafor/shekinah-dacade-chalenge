@@ -48,10 +48,13 @@
           <button type="submit" id="addArticleBtn" class="btn btn-dark btn-block mb-5">Submit Article</button>
           </div>
           <div class="col-xs-12 col-md-8 mt-5">
-              <div id="loader">
-                  <img src="loading.svg" class="img-responsive mt-5 ml-5">
-                   <div class="ml-5"><b>LOADING...</b></div>
-                </div>
+              <div class="loader" >
+                    <svg width="48" height="48" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                      <path d="M 150,0 a 150,150 0 0,1 106.066,256.066 l -35.355,-35.355 a -100,-100 0 0,0 -70.711,-170.711 z" fill="#76f19a">
+                        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 150 150" to="360 150 150" begin="0s" dur=".5s" fill="freeze" repeatCount="indefinite"></animateTransform>
+                      </path>
+                    </svg>
+                    </div>
             <!-- <div class="card mb-3">
               <img class="card-img-top" src="img/download.jfif" alt="Card image cap" width="50" height="300">
               <div class="card-body">
