@@ -89,7 +89,7 @@ window.addEventListener('load', async() => {
         content:getArticleList.content,
         url:getArticleList.imageUrl,
         author:getArticleList.author,
-        created:getArticleList.created
+        created:new Date(getArticleList.created)
       })
     }
     renderArticleList();  
