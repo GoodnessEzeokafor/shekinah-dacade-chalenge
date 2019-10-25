@@ -65,7 +65,7 @@ async function contractCall(func, args, value) {
 function renderArticleList(){
     let template = $('#template').html();
     Mustache.parse(template);
-    var rendered = Mustache.render(template, {productListArr});
+    var rendered = Mustache.render(template, {articleListArr});
     $("#articleListBody").html(rendered);
     console.log("Mustashe Template Display")
 }
@@ -122,7 +122,7 @@ window.addEventListener('load', async() => {
     })
   
   
-    renderProductList();
+    renderArticleList();
     $("#loader").hide();
       //This will clear the value in all scenarious
       var title_input = document.getElementById("title")
